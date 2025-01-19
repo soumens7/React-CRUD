@@ -42,7 +42,7 @@ export default function App() {
         ...doc.data(),
         id: doc.id,
       }));
-      console.log(docsRef);
+      //console.log(docsRef);
 
       setUsers(docsRef);
     };
