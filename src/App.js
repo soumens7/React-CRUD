@@ -16,22 +16,23 @@ export default function App() {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
 
+  // Create User
   const createUser = async () => {
     await addDoc(usersCollectionRef, { name: name, age: age });
   };
-
+  // Update Age
   const updateAge = async (id, age) => {
     const userDoc = doc(db, "crud", id);
     const newAge = { age: age + 1 };
     await updateDoc(userDoc, newAge);
     //console.log(id, age);
   };
-
+  // Delete User
   const deleteUser = async (id) => {
     const userDoc = doc(db, "crud", id);
     await deleteDoc(userDoc);
   };
-
+  // Get Users
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef);
@@ -80,4 +81,3 @@ export default function App() {
     </div>
   );
 }
-
