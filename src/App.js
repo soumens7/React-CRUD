@@ -31,7 +31,7 @@ export default function App() {
     const userDoc = doc(db, "crud", id);
     await deleteDoc(userDoc);
   };
-  
+
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef);
@@ -80,4 +80,4 @@ export default function App() {
     </div>
   );
 }
-//
+
